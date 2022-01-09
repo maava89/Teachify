@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959961788627",
+    "project_id": "teachify-7d15d",
+    "storage_bucket": "teachify-7d15d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959961788627:android:8ff11daf2386d742f6e426",
+        "android_client_info": {
+          "package_name": "com.companyname.teachify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959961788627-eic59c3lqaqhblm867se10cerbm56nov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl_BsM8r_l7vOu7vDu_nGPEhI8nsbP9vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959961788627-eic59c3lqaqhblm867se10cerbm56nov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

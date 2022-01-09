@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Teachify.ViewModels" 
+             x:Class="Teachify.Views.ContactPage" Title="{Binding Title}" BackgroundColor="AliceBlue">
+            
+            
+
+    <ContentPage.BindingContext>
+        <vm:ContactModel/>
+    </ContentPage.BindingContext>
+
+
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <AbsoluteLayout>
+            <Image Aspect="Fill" Source="teach_logo.png" HeightRequest="250" />
+        </AbsoluteLayout>
+        <ScrollView Grid.Row="1">
+            
+            <StackLayout Padding="10,24,10,30">
+                
+                <Label Text="Full Name" FontAttributes="Bold"></Label>
+                <Entry Placeholder="Enter Your Name Here..."/>
+                <Label Text="Subject" FontAttributes="Bold"></Label>
+                <Entry Placeholder="Enter Your Subject Here..." x:Name="subject" />
+                <Label Text="E-Mail" FontAttributes="Bold"></Label>
+                <Entry Placeholder="Enter your E-Mail Here..."/>
+                <Label Text="Message" FontAttributes="Bold"></Label>
+                <Editor Placeholder="Type Your Message Here..." VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  x:Name="message" HeightRequest="150"/>
+                <Button Text="Send Message" BackgroundColor="#00008b" HorizontalOptions="FillAndExpand" CornerRadius="25" Clicked="Button_Clicked"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Contact Us At Our Social Media Pages" FontSize="Title" FontAttributes="Bold" />
+                             
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout>
+                    <Button ContentLayout="Bottom,0" ImageSource="facebook_logo.png"  HorizontalOptions="Start" Margin="0,10,100,0" 
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="Transparent"
+                        TextColor="White"/>
+                    <Button ContentLayout="Bottom,0" ImageSource="instagram_logo.png" HorizontalOptions="Start" Margin="108,-75,100,0"
+                        Command="{Binding OpenWebCommand_1}"
+                        BackgroundColor="Transparent"
+                        TextColor="White"/>
+                    <Button ContentLayout="Bottom,0" ImageSource="youtube_logo.png" HorizontalOptions="Start" Margin="230,-75,10,0"
+                        BackgroundColor="Transparent"
+                        Command="{Binding OpenWebCommand_2}"
+                        TextColor="White"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="YoutubeButton" Tapped="YoutubeButton_Clicked" NumberOfTapsRequired="1"
+                                              Command="{Binding OpenWebCommand_2}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

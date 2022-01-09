@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teachify.Views.RegisterPage" xmlns:vm="clr-namespace:Teachify.ViewModels" BackgroundColor="AliceBlue">
+
+    <ContentPage.BindingContext>
+        <vm:SignUpViewModel/>
+    </ContentPage.BindingContext>
+
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Margin="10" VerticalOptions="CenterAndExpand">
+                <Image Source="teach_logo.png"/>
+                <Label Text="Welcome to Teachify" HorizontalOptions="Center"  FontAttributes="Bold"  FontSize="Title" TextColor="#707070"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Margin="40,0,40,0" VerticalOptions="CenterAndExpand">
+                <Entry Placeholder="E-mail" PlaceholderColor="#707070" x:Name="UserNewEmail" />
+                <Entry Placeholder="Password" PlaceholderColor="#707070" x:Name="UserNewPassword" IsPassword="True"/>
+                <Entry Placeholder="Confirm Password" x:Name="UserNewConfirmPassword"  PlaceholderColor="#707070" IsPassword="True"/>
+                <Button Text="Sign Up" BackgroundColor="#00008B" TextColor="White" CornerRadius="30" HeightRequest="40" x:Name="BtnSignUp" Clicked="BtnSignUp_Clicked"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

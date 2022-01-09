@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Teachify.ViewModels" xmlns:d="http://xamarin.com/schemas/2014/forms/design" x:DataType="viewmodels:BaseViewModel"
+             x:Class="Teachify.Views.HomePage" Title="{Binding Title}" BackgroundColor="AliceBlue" >
+
+    <ContentPage.BindingContext>
+        <viewmodels:HomeModel/>
+    </ContentPage.BindingContext>
+
+
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Aspect="Fill" Source="teach_logo.png" AbsoluteLayout.LayoutBounds="0,0,1,0.5" AbsoluteLayout.LayoutFlags="All" />
+
+            <Grid AbsoluteLayout.LayoutBounds="0,1,1,0.5" AbsoluteLayout.LayoutFlags="All" BackgroundColor="AliceBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.4*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Margin="55,50,0,0" VerticalOptions="Center">
+                    <Image Source="specialization.png"/>
+                    <Label Text="Topics" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapTopics" NumberOfTapsRequired="1" Tapped="TapTopics_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="2" Margin="0,50,40,0" VerticalOptions="Center">
+                    <Image Source="icon_feed.png"/>
+                    <Label Text="Browse" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapBrowse" NumberOfTapsRequired="1" Tapped="TapBrowse_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    
+                </StackLayout>
+                <Image Source="linev" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"/>
+                <Image Source="lineh" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Margin="55,-30,0,0" VerticalOptions="Center">
+                    <Image Source="location.png"/>
+                    <Label Text="About Us" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapAboutUs" NumberOfTapsRequired="1" Tapped="TapAboutUs_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="2" Margin="0,-30,40,0" VerticalOptions="Center">
+                    <Image Source="faq.png"/>
+                    <Label Text="Contact Us" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapContact" NumberOfTapsRequired="1" Tapped="TapContact_Tapped"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Grid.Column="0" Margin="0,-50,-200,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button Text="Log Out" x:Name="TapLogOut" Clicked="TapLogOut_Clicked" BackgroundColor="#00008B" TextColor="White" CornerRadius="30" HeightRequest="40"></Button>
+                </StackLayout>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

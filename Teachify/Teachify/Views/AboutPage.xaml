@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teachify.Views.AboutPage"
+             xmlns:vm="clr-namespace:Teachify.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="AliceBlue">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        <AbsoluteLayout>
+            <Image Aspect="Fill" Source="teach_logo.png" HeightRequest="250" />
+        </AbsoluteLayout>
+        <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="30,5,30,24" Spacing="10">
+                <Label Text="About Us" FontSize="Title"/>
+                <Label Text="SecOps Group is a small team of members who was founded in the Second Year of our study in Noroff University College, and we started as beginners in these subjects as well as developing this application platform. However, we have come far in terms of knowledge and awareness. And we have learned that the modern society as it is now, are becoming more ignorant to the technology risen, and for that this platform is especially designed for children and teenagers which uses everyday technology like smart devices and such, to become more alert to their sorroundings in both physical, technical security but also operational security." FontSize="16" Padding="0,0,0,0"/>
+                <Label FontSize="35" Padding="0,-50,0,0">
+                </Label>
+                <Grid HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#A0A4C9" Opacity="0.2"/>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="30,15,20,-60" Spacing="10">
+                        <Label Text="What We Do" FontSize="Title"/>
+                        <Label Text="Our main goal is to take all of our knowledge that we have learned so far in our two year's of study in Noroff University College and raise awareness amongst children and in general young people, to eventually know the consequences and dangers that modern technology would bring." FontSize="16" Padding="0,0,0,0"/>
+                        <Label FontSize="35" Padding="0,15,0,0">
+                        </Label>
+                    </StackLayout>
+                </Grid>
+                <Button Margin="0,10,8,0" Text="Learn more"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" CornerRadius="25" />
+            </StackLayout>
+    </ScrollView>
+
+    </Grid>
+    
+</ContentPage>
